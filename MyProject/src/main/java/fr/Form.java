@@ -3,20 +3,7 @@ package fr;
 import java.util.Scanner;
 
 public class Form {
-    public static void main(String[] args) {
-
-        enTete();
-        separateur();
-        System.out.println();
-        identification();
-        System.out.println();
-        fraisForfait();
-        System.out.println();
-        phrase();
-        autreFrais();
-        System.out.println();
-        Condition();
-    }
+    
 
     public static void fraisForfait() {
         Scanner console;
@@ -90,13 +77,15 @@ public class Form {
     }
 
     public static void identification() {
-        String visiteur = "visiteur";
-        String matricule = "Matricule";
-        String nom = "Nom";
-        String mois = "Mois";
-        System.out.println(visiteur + "   " + matricule);
-        System.out.println("           " + nom);
-        System.out.println(mois + "        ");
+        Scanner console;
+        System.out.print("visiteur      ");
+        console = new Scanner(System.in);
+        System.out.print("Matricule : ");
+        String matricule = console.nextLine().toUpperCase();
+        System.out.print("              Nom : ");
+        String nom = console.nextLine().toUpperCase();
+        System.out.print("              Mois : ");
+        String mois = console.nextLine();
     }
 
     public static void Condition() {
@@ -120,5 +109,19 @@ public class Form {
             System.out.print("-");
         }
 
+    }
+
+    public static void formulaire() {
+        enTete();
+        separateur();
+        System.out.println();
+        identification();
+        System.out.println();
+        fraisForfait();
+        System.out.println();
+        phrase();
+        autreFrais();
+        System.out.println();
+        Condition();
     }
 }
